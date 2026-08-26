@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Thông tin sản phẩm";
+}
+
+<h1>@ViewData["Title"]</h1>
+@{
+    NdaProduct product = ViewData["product"] as NdaLesson02Theory.Models.NdaProduct;
+}
+<div class="alert alert-danger">
+    <h2>Dữ liệu lấy từ viewdata</h2>
+    <p>Mã sản phẩm @product.ProductID</p>
+    <p>Tên sản phẩm @product.ProductName</p>
+    <p>Năm SX @product.YearRelease</p>
+    <p>Giá @product.Price</p>
+</div>
+<div class="alert alert-danger">
+    <h2>Dữ liệu lấy từ viewbag</h2>
+    <p>Mã sản phẩm @ViewBag.product.ProductID</p>
+    <p>Tên sản phẩm @ViewBag.product.ProductName</p>
+    <p>Năm SX @ViewBag.product.YearRelease</p>
+    <p>Giá @ViewBag.product.Price</p>
+</div>
