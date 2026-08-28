@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "Danh Sách Sản Phẩm";
+
+    var product = ViewData["Products"] as List<NdaLesson03.Models.NdaProduct>;
+}
+<div class="card">
+    <div class="card-header">
+        <h1>@ViewData["Title"]</h1>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Year</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in product)
+                {
+                    <tr>
+                        <td>@item.NdaProductId</td>
+                        <td>@item.NdaProductName</td>
+                        <td>@item.NdaYearRelease</td>
+                        <td>@item.NdaPrice</td>
+                        <td>
+                            <a href="#" class="btn btn-info"> xem chi tiết</a>
+                            <a href="#" class="btn btn-primary"> sửa</a>
+                            <a href="#" class="btn btn-warning"> xóa</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">
+                        Tổng số sản phẩm @product.Count
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

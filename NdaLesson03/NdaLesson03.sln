@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37614.0 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NdaLesson03", "NdaLesson03.csproj", "{A67B45B6-7B8A-42B0-A619-39AFD630E8B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A67B45B6-7B8A-42B0-A619-39AFD630E8B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A67B45B6-7B8A-42B0-A619-39AFD630E8B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A67B45B6-7B8A-42B0-A619-39AFD630E8B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A67B45B6-7B8A-42B0-A619-39AFD630E8B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE5758FF-15AF-4159-8B69-45DD87271F92}
+	EndGlobalSection
+EndGlobal
