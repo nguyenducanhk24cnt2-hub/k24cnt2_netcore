@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Thông tin tài khoản";
+    var Profile = ViewBag.NdaAccount as NdaAccount;
+}
+<div class="row">
+    <div class="col-md-4">
+        
+                <div>
+                    <img src="@Profile.Avatar" alt="@Profile.Name" class="w-75 h-75" />
+                </div>
+    </div>
+    <div class="col-md-8">
+                <div class="card" >
+                    <h3>Full name:@Profile.Name</h3>
+                    <p>Email:@Profile.Email</p>
+                    <p>Address:@Profile.Address</p>
+                    <p>Tel Num:@Profile.Phone</p>
+                    <p>Bio:@Profile.Bio</p>
+                    <p>Gender:
+                        @if (Profile.Gender == 1)
+                        {
+                            <text>Male</text>
+                        }
+                        else
+                        {
+                            <text>Female</text>
+                        }
+                    </p>
+                    <p>BirthDay: @Profile.Birthday</p>
+                    <p>
+                        <a asp-controller="NdaAccount" asp-action="NdaIndex" class="btn btn-danger">Back to List</a>
+                    </p>
+                </div>
+            </div>
+        </div>
