@@ -1,0 +1,7 @@
+﻿@model IEnumerable<NdaLesson06Views.Models.Category>
+<ul class="bg-danger" style="margin:1rem">
+    @foreach (var item in Model)
+    {
+        <li>@item.CategoryName</li>
+    }
+</ul>
