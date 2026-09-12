@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewData["Title"] = "Thông tin member";
+    var member = Model as NdaLesson07Models.Models.DataModels.NdaMember;
+}
+<div class="alert alert-info">
+    <h1>@ViewData["Title"]</h1>
+    <p>Member id: @member.NdaMemberId</p>
+    <p>UserName: @member.NdaUserName</p>
+    <p>Password: @member.NdaPassword</p>
+    <p>FullName: @member.NdaFullName</p>
+    <p>Email: @member.NdaEmail</p>
+</div>

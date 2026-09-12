@@ -1,0 +1,61 @@
+﻿@model IEnumerable<NdaLesson07Models.Models.DataModels.NdaMember>
+@{
+    ViewData["Title"] = "Danh sach sinh vien";
+}
+
+<div class="card p-3">
+    <h1>@ViewData["Title"]</h1>
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Create new</a>
+    </p>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NdaMemberId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NdaUserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NdaPassword)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NdaFullName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NdaEmail)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NdaMemberId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NdaUserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NdaPassword)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NdaFullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NdaEmail)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.NdaMemberId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.NdaMemberId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.NdaMemberId })
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

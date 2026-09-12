@@ -1,0 +1,46 @@
+﻿@model NdaLesson07Models.Models.DataModels.NdaMember
+@{
+    ViewData["Title"] = "create";
+}
+<div class="card p-3">
+    <h1>them moi thanh vien</h1>
+    <h4>NdaMember</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create" method="post" asp-controller="NdaMember">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="NdaMemberId" class="control-label"></label>
+                    <input asp-for="NdaMemberId" class="form-control" />
+                    <span asp-validation-for="NdaMemberId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NdaUserName" class="control-label"></label>
+                    <input asp-for="NdaUserName" class="form-control" />
+                    <span asp-validation-for="NdaUserName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NdaPassword" class="control-label"></label>
+                    <input asp-for="NdaPassword" class="form-control" />
+                    <span asp-validation-for="NdaPassword" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NdaFullName" class="control-label"></label>
+                    <input asp-for="NdaFullName" class="form-control" />
+                    <span asp-validation-for="NdaFullName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NdaEmail" class="control-label"></label>
+                    <input asp-for="NdaEmail" class="form-control" />
+                    <span asp-validation-for="NdaEmail" class="text-danger"></span>
+                </div>
+                <div class="form-group my-2">
+                    <input type="submit" value="ghi lai" class="btn btn-primary" />
+                    <a asp-action="Index" class="btn btn-secondary">quay lai</a>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+</div>
