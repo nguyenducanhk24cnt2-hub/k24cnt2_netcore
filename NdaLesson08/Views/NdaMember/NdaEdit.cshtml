@@ -1,0 +1,58 @@
+﻿@model NdaLesson08.Models.NdaMember
+
+@{
+    ViewData["Title"] = "Sửa thông tin thành viên";
+}
+<form asp-action="NdaEdit" method="post">
+<div class="card p-3">
+    <div class="card-header">
+            <h1>@ViewData["Title"]</h1>
+
+            
+    </div>
+        
+     <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="NdaMemberId" />
+                    <div class="form-group">
+                        <label asp-for="NdaUserName" class="control-label"></label>
+                        <input asp-for="NdaUserName" class="form-control" />
+                        <span asp-validation-for="NdaUserName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="NdaPassword" class="control-label"></label>
+                        <input asp-for="NdaPassword" class="form-control" />
+                        <span asp-validation-for="NdaPassword" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="NdaFullName" class="control-label"></label>
+                        <input asp-for="NdaFullName" class="form-control" />
+                        <span asp-validation-for="NdaFullName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="NdaEmail" class="control-label"></label>
+                        <input asp-for="NdaEmail" class="form-control" />
+                        <span asp-validation-for="NdaEmail" class="text-danger"></span>
+                    </div>
+                    
+
+                </div>
+            </div>
+
+     </div> 
+     <div class="card-footer">
+            <div class="form-group">
+                <input type="submit" value="Cập nhật" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+            </div>
+     </div>
+        
+</div>
+
+</form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
