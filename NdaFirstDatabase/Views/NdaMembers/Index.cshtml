@@ -1,0 +1,65 @@
+@model IEnumerable<NdaFirstDatabase.Models.NdaMember>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NdaUserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NdaPassword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NdaFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NdaEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NdaPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NdaStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.NdaUserName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.NdaPassword)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.NdaFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.NdaEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.NdaPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.NdaStatus)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.NdaId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.NdaId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.NdaId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
