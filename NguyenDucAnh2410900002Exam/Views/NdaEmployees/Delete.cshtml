@@ -1,0 +1,89 @@
+﻿@model NguyenDucAnh2410900002Exam.Models.NdaEmployee
+
+@{
+    ViewData["Title"] = "Xóa";
+}
+
+<div class="container mt-4">
+    <div class="card border-danger shadow-sm col-md-8 mx-auto">
+        <div class="card-header bg-danger text-white py-3">
+            <h1 class="h4 mb-0 text-white"><i class="bi bi-exclamation-triangle-fill"></i> @ViewData["Title"]</h1>
+        </div>
+        <div class="card-body p-4">
+            <h3 class="text-danger fs-5 mb-3">Bạn có chắc là muốn xóa không?</h3>
+            <h4 class="text-secondary fs-6">NguyenDucAnh2410900002Exam.Models.NdaEmployee</h4>
+            <hr />
+            <dl class="row mb-2">
+                <dt class="col-sm-3 text-secondary fw-bold">
+                    @Html.DisplayNameFor(model => model.Id)
+                </dt>
+                <dd class="col-sm-9 fw-semibold">
+                    @Html.DisplayFor(model => model.Id)
+                </dd>
+            </dl>
+            <dl class="row mb-2">
+                <dt class="col-sm-3 text-secondary fw-bold">
+                    @Html.DisplayNameFor(model => model.NdaName)
+                </dt>
+                <dd class="col-sm-9 fw-semibold">
+                    @Html.DisplayFor(model => model.NdaName)
+                </dd>
+            </dl>
+            <dl class="row mb-2">
+                <dt class="col-sm-3 text-secondary fw-bold">
+                    @Html.DisplayNameFor(model => model.NdaGender)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.NdaGender)
+                </dd>
+            </dl>
+            <dl class="row mb-2">
+                <dt class="col-sm-3 text-secondary fw-bold">
+                    @Html.DisplayNameFor(model => model.NdaBirthDay)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.NdaBirthDay)
+                </dd>
+            </dl>
+            <dl class="row mb-2">
+                <dt class="col-sm-3 text-secondary fw-bold">
+                    @Html.DisplayNameFor(model => model.NdaEmail)
+                </dt>
+                <dd class="col-sm-9 text-primary">
+                    @Html.DisplayFor(model => model.NdaEmail)
+                </dd>
+            </dl>
+            <dl class="row mb-2">
+                <dt class="col-sm-3 text-secondary fw-bold">
+                    @Html.DisplayNameFor(model => model.NdaPhone)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.NdaPhone)
+                </dd>
+            </dl>
+            <dl class="row mb-3">
+                <dt class="col-sm-3 text-secondary fw-bold">
+                    @Html.DisplayNameFor(model => model.NdaActive)
+                </dt>
+                <dd class="col-sm-9">
+                    @if (Model.NdaActive)
+                    {
+                        <span class="badge bg-success">Đang Hoạt Động</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">Đã Ngừng Hoạt Động</span>
+                    }
+                </dd>
+            </dl>
+
+            <hr class="my-4" />
+
+            <form asp-action="Delete" class="d-flex justify-content-between align-items-center">
+                <input type="hidden" asp-for="Id" />
+                <a asp-action="Index" class="btn btn-outline-secondary">Về danh sách</a>
+                <input type="submit" value="Xóa" class="btn btn-danger px-4" />
+            </form>
+        </div>
+    </div>
+</div>

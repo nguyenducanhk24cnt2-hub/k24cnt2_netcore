@@ -1,0 +1,75 @@
+﻿@model NguyenDucAnh2410900002Exam.Models.NdaEmployee
+
+@{
+    ViewData["Title"] = "Sửa thông tin";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-sm border-0 col-md-8 mx-auto">
+        <div class="card-header bg-warning text-dark py-3">
+            <h1 class="h4 mb-0 fw-bold"><i class="bi bi-pencil-square"></i> @ViewData["Title"]</h1>
+        </div>
+        <div class="card-body p-4">
+            
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                <div class="mb-3">
+                    <label asp-for="Id" class="form-label fw-bold"></label>
+                    <input asp-for="Id" class="form-control" readonly/>
+                    <span asp-validation-for="Id" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="NdaName" class="form-label fw-bold"></label>
+                    <input asp-for="NdaName" class="form-control" />
+                    <span asp-validation-for="NdaName" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="NdaGender" class="form-label fw-bold"></label>
+                    <input asp-for="NdaGender" class="form-control" />
+                    <span asp-validation-for="NdaGender" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="NdaBirthDay" class="form-label fw-bold"></label>
+                    <input asp-for="NdaBirthDay" class="form-control" />
+                    <span asp-validation-for="NdaBirthDay" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="NdaEmail" class="form-label fw-bold"></label>
+                    <input asp-for="NdaEmail" class="form-control" />
+                    <span asp-validation-for="NdaEmail" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="NdaPhone" class="form-label fw-bold"></label>
+                    <input asp-for="NdaPhone" class="form-control" />
+                    <span asp-validation-for="NdaPhone" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3 form-check">
+                    <input asp-for="NdaActive" class="form-check-input" />
+                    <label asp-for="NdaActive" class="form-check-label fw-bold"></label>
+                    <span asp-validation-for="NdaActive" class="text-danger"></span>
+                </div>
+
+                <hr class="my-4" />
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <a asp-action="Index" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left"></i> Về Danh Sách
+                    </a>
+                    <input type="submit" value="Save" class="btn btn-warning px-4 fw-bold" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
