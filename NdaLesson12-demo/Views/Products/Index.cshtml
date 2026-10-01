@@ -1,0 +1,52 @@
+﻿@model IEnumerable<NdaLesson12_demo.Models.Product>
+
+@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+}
+
+<h1>Danh sách sản phẩm</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-sm btn-success">Thêm mới</a>
+</p>
+
+<table class="table table-bordered align-middle">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>SalePrice</th>
+            <th>Status</th>
+            <th>Descriptions</th>
+            <th>CreatedDate</th>
+            <th>Category</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td class="text-center">
+                    @if (!string.IsNullOrEmpty(item.Image))
+                    {
+                        <img src="~/productimage/@item.Image" width="70" height="70" style="object-fit:cover;" class="rounded" />
+                    }
+                </td>
+                <td>@item.Price</td>
+                <td>@item.SalePrice</td>
+                <td>@item.Status</td>
+                <td>@item.Descriptions</td>
+                <td>@item.CreatedDate?.ToString("dd/MM/yyyy hh:mm:ss tt")</td>
+                <td>@item.Category?.Name</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-success">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
